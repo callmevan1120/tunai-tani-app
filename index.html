@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tunai Tani - Mobile App</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      id="initial-role-selection"
+      class="container-fluid d-flex flex-column align-items-center justify-content-center text-center vh-100 bg-light-green"
+    >
+      <img
+        src="assets/logo.png"
+        alt="Tunai Tani Logo"
+        class="mb-4 rounded-circle shadow-lg app-logo"
+      />
+      <h1 class="display-5 fw-bold text-white mb-3">Tunai Tani</h1>
+      <p class="lead text-white-75 mb-5 px-3">
+        Dukung pertanian lokal, panen masa depan bersama petani hebat.
+      </p>
+      <div class="d-grid gap-3 col-8 mx-auto">
+        <button class="btn btn-primary btn-lg shadow-sm" id="btn-select-petani">
+          <i class="fas fa-user-tie me-2"></i>Saya Petani
+        </button>
+        <button
+          class="btn btn-success btn-lg shadow-sm"
+          id="btn-select-konsumen"
+        >
+          <i class="fas fa-hand-holding-heart me-2"></i>Saya Konsumen
+        </button>
+      </div>
+    </div>
+
+    <div id="main-app-content" class="d-none d-flex flex-column min-vh-100">
+      <header
+        class="app-header shadow-sm d-flex justify-content-between align-items-center p-3 bg-white"
+      >
+        <span class="app-title fw-bold text-success">Tunai Tani</span>
+        <div class="dropdown">
+          <button
+            class="btn btn-link text-dark p-0"
+            type="button"
+            id="profileDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i class="fas fa-user-circle fa-lg"></i>
+          </button>
+          <ul
+            class="dropdown-menu dropdown-menu-end"
+            aria-labelledby="profileDropdown"
+          >
+            <li>
+              <h6 class="dropdown-header">
+                <span id="current-role-display">Guest</span>
+              </h6>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="#" id="nav-change-role"
+                ><i class="fas fa-arrows-rotate me-2"></i>Ganti Role</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item text-danger" href="#" id="nav-logout"
+                ><i class="fas fa-sign-out-alt me-2"></i>Keluar</a
+              >
+            </li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="container-fluid flex-grow-1 p-3">
+        <div id="content-area"></div>
+      </main>
+
+      <nav
+        class="app-bottom-nav shadow-lg bg-white d-flex justify-content-around align-items-center py-2"
+      >
+        <a href="#" class="nav-item active" id="nav-home">
+          <i class="fas fa-home"></i>
+          <span>Beranda</span>
+        </a>
+        <a href="#" class="nav-item" id="nav-preorder">
+          <i class="fas fa-seedling"></i>
+          <span>Pre-order</span>
+        </a>
+        <a href="#" class="nav-item petani-only" id="nav-simulasi">
+          <i class="fas fa-calculator"></i>
+          <span>Simulasi</span>
+        </a>
+        <a href="#" class="nav-item konsumen-only" id="nav-crowdfarming">
+          <i class="fas fa-coins"></i>
+          <span>Investasi</span>
+        </a>
+        <a href="#" class="nav-item petani-only" id="nav-rekomendasi">
+          <i class="fas fa-chart-line"></i>
+          <span>Rekomendasi</span>
+        </a>
+        <a href="#" class="nav-item petani-only" id="nav-konsultasi">
+          <i class="fas fa-comments-dollar"></i>
+          <span>Konsultasi</span>
+        </a>
+        <a href="#" class="nav-item" id="nav-chat">
+          <i class="fas fa-comment-dots"></i>
+          <span>Chat</span>
+        </a>
+        <a href="#" class="nav-item" id="nav-laporan">
+          <i class="fas fa-clipboard-list"></i>
+          <span>Laporan</span>
+        </a>
+        <a href="#" class="nav-item konsumen-only" id="nav-keranjang">
+          <i class="fas fa-shopping-basket"></i>
+          <span>Keranjang</span>
+        </a>
+      </nav>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
